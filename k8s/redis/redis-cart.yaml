@@ -16,6 +16,16 @@ spec:
         image: redis:8-alpine
         ports:
         - containerPort: 6379
+        livenessProbe:
+          initialDelaySeconds: 10
+          tcpSocket: 
+            port: 6379
+          periodSeconds: 5
+        readinessProbe:
+          initialDelaySeconds: 10
+          tcpSocket: 
+            port: 6379
+          periodSeconds: 5
         volumeMounts:
         - name: redis-data
           mountPath: /data

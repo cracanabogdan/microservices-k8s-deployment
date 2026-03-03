@@ -20,6 +20,11 @@ spec:
         - name: PORT
           value: "3550"
         livenessProbe:
+          httpGet: 
+            path: /health
+            port: 3550
+          periodSeconds: 5
+        readinessProbe:
           grpc: 
             port: 3550
           periodSeconds: 5
