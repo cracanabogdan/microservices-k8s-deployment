@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: productcatalogservice
 spec:
+  replicas: 2
   selector: 
    matchLabels:
     app: productcatalogservice
@@ -20,11 +21,13 @@ spec:
         - name: PORT
           value: "3550"
         livenessProbe:
+          initialDelaySeconds: 10
           httpGet: 
             path: /health
             port: 3550
           periodSeconds: 5
         readinessProbe:
+          initialDelaySeconds: 10
           grpc: 
             port: 3550
           periodSeconds: 5
