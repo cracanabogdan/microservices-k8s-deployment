@@ -23,10 +23,12 @@ spec:
         - name: DISABLE_PROFILER
           value: "1"
         livenessProbe:
+          initialDelaySeconds: 10
           grpc: 
             port: 50051
           periodSeconds: 5
         readinessProbe:
+          initialDelaySeconds: 10
           grpc: 
             port: 50051
           periodSeconds: 5

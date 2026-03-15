@@ -21,10 +21,12 @@ spec:
         - name: PORT
           value: "8080"
         livenessProbe:
+          initialDelaySeconds: 10
           grpc: 
             port: 8080
           periodSeconds: 5
         readinessProbe:
+          initialDelaySeconds: 10
           grpc: 
             port: 8080
           periodSeconds: 5

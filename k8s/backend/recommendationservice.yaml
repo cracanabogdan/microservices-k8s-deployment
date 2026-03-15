@@ -23,10 +23,12 @@ spec:
         - name: PRODUCT_CATALOG_SERVICE_ADDR
           value: "productcatalogservice:3550"
         livenessProbe:
+          initialDelaySeconds: 10
           grpc: 
             port: 8080
           periodSeconds: 5
         readinessProbe:
+          initialDelaySeconds: 10
           grpc: 
             port: 8080
           periodSeconds: 5

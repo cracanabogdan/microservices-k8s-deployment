@@ -22,8 +22,7 @@ spec:
           value: "3550"
         livenessProbe:
           initialDelaySeconds: 10
-          httpGet: 
-            path: /health
+          grpc: 
             port: 3550
           periodSeconds: 5
         readinessProbe:
